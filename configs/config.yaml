@@ -1,0 +1,47 @@
+data:
+  lumiere_dir: "/path/to/lumiere"
+  ucsf_dir: "/path/to/ucsf"
+  processed_dir: "/path/to/processed"
+  registry_path: "/path/to/registry.csv"
+  target_shape: [128, 128, 128]
+  target_spacing: [1.0, 1.0, 1.0]
+  modalities: ["t1", "t1ce", "t2", "flair"]
+  val_frac: 0.15
+  test_frac: 0.15
+  seed: 42
+
+model:
+  feature_size: 48
+  in_channels: 4
+  out_channels: 3
+  d_model: 384
+  nhead: 8
+  num_transformer_layers: 2
+  num_classes: 2           # LGG / GBM
+  dropout: 0.1
+  pretrained_weights: "https://github.com/Project-MONAI/MONAI-extra-test-data/releases/download/0.8.1/model_swinvit.pt"
+
+training:
+  max_epochs: 50
+  freeze_encoder_epochs: 5
+  batch_size: 1
+  lr: 1e-4
+  weight_decay: 1e-5
+  grad_clip: 1.0
+  val_every: 5
+  save_every: 5
+  checkpoint_dir: "checkpoints"
+
+  lambdas:
+    seg: 1.0
+    boundary: 0.2
+    static: 0.5
+    ortho: 0.1
+    reverse: 0.1
+    clf: 0.1
+    prog: 0.1
+
+  boundary:
+    n_samples: 256
+    temperature: 0.07
+    radius: 1
