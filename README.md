@@ -23,7 +23,6 @@ LongiDiPro-Brain is a deep learning framework for longitudinal glioma analysis. 
 |--------|-------------|
 | Spatiotemporal Disentanglement | Separates static anatomy from dynamic tumor evolution (DiPro-inspired) |
 | Progression-Aware Reverse Trick | Forces model to understand direction of tumor change |
-| Boundary-Specific SupCon Loss | Novel contrastive loss targeting tumor boundary sharpness |
 | Bidirectional Temporal Transformer | Forward + reverse processing of longitudinal sequences |
 
 ---
