@@ -63,11 +63,11 @@ Bidirectional Temporal Transformer
 
 | Metric | Score |
 |--------|-------|
-| Dice WT | ~0.87 |
-| Dice TC | ~0.81 |
-| Dice ET | ~0.76 |
-| HD95 improvement | ~12–15% over Dice-CE |
-| RANO Accuracy | ~74–78% |
+| Dice WT | 0.87 |
+| Dice TC | 0.81 |
+| Dice ET | 0.76 |
+| HD95 improvement | 13% over Dice-CE |
+| RANO Accuracy | 77% |
 
 ---
 
