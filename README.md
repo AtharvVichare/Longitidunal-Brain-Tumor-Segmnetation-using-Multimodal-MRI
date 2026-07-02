@@ -111,5 +111,3 @@ python evaluate.py --config configs/config.yaml \
 
 ---
 
-## License
-MIT
