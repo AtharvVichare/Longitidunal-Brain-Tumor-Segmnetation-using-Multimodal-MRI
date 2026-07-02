@@ -67,42 +67,6 @@ Bidirectional Temporal Transformer
 | HD95 improvement | 13% over Dice-CE |
 | RANO Accuracy | 77% |
 
----
-
-## Project Structure
-
-```
-LongiDiPro-Brain/
-├── configs/
-│   └── config.yaml              # all hyperparameters
-├── data/
-│   ├── preprocess.py            # resampling, normalization, crop/pad
-│   ├── dataset.py               # PyTorch Dataset class
-│   └── label_maps.py            # label harmonization across datasets
-├── models/
-│   ├── encoder.py               # Swin UNETR + pretrained weight loader
-│   ├── disentanglement.py       # static/dynamic heads + losses
-│   ├── temporal.py              # time embedding + bidirectional transformer
-│   ├── boundary.py              # boundary sampler + SupCon loss
-│   ├── heads.py                 # classification + progression heads
-│   └── longidipro.py            # full model assembly
-├── training/
-│   ├── trainer.py               # training loop
-│   └── losses.py                # combined loss function
-├── evaluation/
-│   └── evaluator.py             # Dice, HD95, RANO metrics
-├── utils/
-│   └── utils.py                 # checkpoint save/load, AverageMeter
-├── scripts/
-│   ├── preprocess_data.py       # run preprocessing pipeline
-│   └── download_data.py         # dataset download helpers
-├── notebooks/
-│   └── LongiDiPro_Colab.ipynb   # full Colab notebook
-├── train.py                     # main training entry point
-├── evaluate.py                  # main evaluation entry point
-├── requirements.txt
-└── README.md
-```
 
 ---
 
