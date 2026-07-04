@@ -98,16 +98,7 @@ python evaluate.py --config configs/config.yaml \
 
 ---
 
-## Citation
 
-```bibtex
-@misc{longidiprobrain2025,
-  title   = {LongiDiPro-Brain: Longitudinal Brain Tumor Analysis via
-             Spatiotemporal Disentanglement and Boundary-Specific Contrastive Learning},
-  author  = {Atharv},
-  year    = {2025},
-}
-```
 
 ---
 
