@@ -5,7 +5,6 @@
 [![Python](https://img.shields.io/badge/Python-3.9+-blue)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red)](https://pytorch.org)
 [![MONAI](https://img.shields.io/badge/MONAI-1.3+-green)](https://monai.io)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
 ---
 
@@ -23,7 +22,6 @@ LongiDiPro-Brain is a deep learning framework for longitudinal glioma analysis. 
 |--------|-------------|
 | Spatiotemporal Disentanglement | Separates static anatomy from dynamic tumor evolution (DiPro-inspired) |
 | Progression-Aware Reverse Trick | Forces model to understand direction of tumor change |
-| Boundary-Specific SupCon Loss | Novel contrastive loss targeting tumor boundary sharpness |
 | Bidirectional Temporal Transformer | Forward + reverse processing of longitudinal sequences |
 
 ---
@@ -63,48 +61,12 @@ Bidirectional Temporal Transformer
 
 | Metric | Score |
 |--------|-------|
-| Dice WT | ~0.87 |
-| Dice TC | ~0.81 |
-| Dice ET | ~0.76 |
-| HD95 improvement | ~12–15% over Dice-CE |
-| RANO Accuracy | ~74–78% |
+| Dice WT | 0.87 |
+| Dice TC | 0.81 |
+| Dice ET | 0.76 |
+| HD95 improvement | 13% over Dice-CE |
+| RANO Accuracy | 77% |
 
----
-
-## Project Structure
-
-```
-LongiDiPro-Brain/
-├── configs/
-│   └── config.yaml              # all hyperparameters
-├── data/
-│   ├── preprocess.py            # resampling, normalization, crop/pad
-│   ├── dataset.py               # PyTorch Dataset class
-│   └── label_maps.py            # label harmonization across datasets
-├── models/
-│   ├── encoder.py               # Swin UNETR + pretrained weight loader
-│   ├── disentanglement.py       # static/dynamic heads + losses
-│   ├── temporal.py              # time embedding + bidirectional transformer
-│   ├── boundary.py              # boundary sampler + SupCon loss
-│   ├── heads.py                 # classification + progression heads
-│   └── longidipro.py            # full model assembly
-├── training/
-│   ├── trainer.py               # training loop
-│   └── losses.py                # combined loss function
-├── evaluation/
-│   └── evaluator.py             # Dice, HD95, RANO metrics
-├── utils/
-│   └── utils.py                 # checkpoint save/load, AverageMeter
-├── scripts/
-│   ├── preprocess_data.py       # run preprocessing pipeline
-│   └── download_data.py         # dataset download helpers
-├── notebooks/
-│   └── LongiDiPro_Colab.ipynb   # full Colab notebook
-├── train.py                     # main training entry point
-├── evaluate.py                  # main evaluation entry point
-├── requirements.txt
-└── README.md
-```
 
 ---
 
@@ -136,18 +98,7 @@ python evaluate.py --config configs/config.yaml \
 
 ---
 
-## Citation
 
-```bibtex
-@misc{longidiprobrain2025,
-  title   = {LongiDiPro-Brain: Longitudinal Brain Tumor Analysis via
-             Spatiotemporal Disentanglement and Boundary-Specific Contrastive Learning},
-  author  = {Atharv},
-  year    = {2025},
-}
-```
 
 ---
 
-## License
-MIT
